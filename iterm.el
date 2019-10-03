@@ -199,5 +199,9 @@ point (determined by `iterm-default-thing') instead."
   (interactive)
   (iterm-send-string (concat "pytest " (buffer-file-name))))
 
+(defun iterm-pytest-dir ()
+  (interactive)
+  (iterm-send-string (concat "pytest " (file-name-directory (buffer-file-name)))))
+
 (provide 'iterm)
 ;;; iterm.el ends here
