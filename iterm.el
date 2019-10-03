@@ -195,7 +195,7 @@ point (determined by `iterm-default-thing') instead."
   (when (buffer-file-name)
     (iterm-send-string (concat "cd " (shell-quote-argument (file-name-directory (buffer-file-name)))))))
 
-(defun iterm-pytest ()
+(defun iterm-pytest-file ()
   (interactive)
   (iterm-send-string (concat "pytest " (buffer-file-name))))
 
