@@ -122,7 +122,7 @@ Set to nil to disable removing empty lines.")
                    "\n"))
     str))
 
-(defun iterm-send-string (str)   
+(defun iterm-send-string (str)
   "Send STR to a running iTerm instance."
   (let* ((str (iterm-maybe-remove-empty-lines str))
          (str (iterm-handle-newline str))
@@ -179,13 +179,13 @@ point (determined by `iterm-default-thing') instead."
 
 (defun iterm-send-file-ipy ()
   "Run current file in ipython."
-  (interactive)  
+  (interactive)
   (when (buffer-file-name)
     (iterm-send-string (concat "%run \"" (buffer-file-name) "\""))))
 
 (defun iterm-cwd-ipy ()
   "Change to the directory of the current file in an ipython session."
-  (interactive)  
+  (interactive)
   (when (buffer-file-name)
     (iterm-send-string (concat "%cd \"" (file-name-directory (buffer-file-name)) "\""))))
 
@@ -197,7 +197,7 @@ point (determined by `iterm-default-thing') instead."
 
 (defun iterm-cwd-R ()
   "Change to the directory of the current file in an R session."
-  (interactive)  
+  (interactive)
   (when (buffer-file-name)
     (iterm-send-string (concat "setwd(\"" (file-name-directory (buffer-file-name)) "\"\)"))))
 
@@ -209,7 +209,7 @@ point (determined by `iterm-default-thing') instead."
 
 (defun iterm-cwd-julia ()
   "Change to the directory of the current file in an julia session."
-  (interactive)  
+  (interactive)
   (when (buffer-file-name)
     (iterm-send-string (concat "cd(\"" (file-name-directory (buffer-file-name)) "\"\)"))))
 
