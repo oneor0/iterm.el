@@ -189,30 +189,6 @@ point (determined by `iterm-default-thing') instead."
   (when (buffer-file-name)
     (iterm-send-string (concat "%cd \"" (file-name-directory (buffer-file-name)) "\""))))
 
-(defun iterm-send-file-R ()
-  "Load current file in R."
-  (interactive)
-  (when (buffer-file-name)
-    (iterm-send-string (concat "source(\"" (buffer-file-name) "\"\)"))))
-
-(defun iterm-cwd-R ()
-  "Change to the directory of the current file in an R session."
-  (interactive)
-  (when (buffer-file-name)
-    (iterm-send-string (concat "setwd(\"" (file-name-directory (buffer-file-name)) "\"\)"))))
-
-(defun iterm-send-file-julia ()
-  "Load current file in julia."
-  (interactive)
-  (when (buffer-file-name)
-    (iterm-send-string (concat "include(\"" (buffer-file-name) "\"\)"))))
-
-(defun iterm-cwd-julia ()
-  "Change to the directory of the current file in an julia session."
-  (interactive)
-  (when (buffer-file-name)
-    (iterm-send-string (concat "cd(\"" (file-name-directory (buffer-file-name)) "\"\)"))))
-
 (defun iterm-cd ()
   "Change directory on the command line."
   (interactive)
