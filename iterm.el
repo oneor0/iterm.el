@@ -130,6 +130,7 @@ Set to nil to disable removing empty lines.")
          (lines (split-string str "\n"))
          (str (concat "osascript "
                       "-e 'tell app \"iTerm2\"' "
+                      "-e 'activate' "
                       "-e 'tell current window' "
                       "-e 'tell current session' "
                       (mapconcat #'(lambda (x)
